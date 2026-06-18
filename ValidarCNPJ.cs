@@ -1,7 +1,7 @@
 /*
 Função para validação de CNPJ numérico ou alfanumérico em C#
 Autor: Eng. Renato Monteiro Batista
-Versão: 1.0 - 11/07/2024
+Versão: 1.1 - 18/06/2026
 URL: https://github.com/renatomb/validar_cnpj
 
 @param string cnpj
@@ -35,7 +35,7 @@ public class CNPJValidator
         cnpj = Regex.Replace(cnpj, "[^0-9A-Z]", "");
         
         // Valida se existe caracteres alfanuméricos maiúsculos somente na raiz do CNPJ seguidos de 6 números
-        if (!Regex.IsMatch(cnpj, "^[0-9A-Z]{8}[0-9]{6}$"))
+        if (!Regex.IsMatch(cnpj, "^[0-9A-Z]{12}[0-9]{2}$"))
         {
             return false;
         }

@@ -1,6 +1,6 @@
 # Validar CNPJ
 
-Biblioteca multiplataforma para validação de CNPJ numérico e alfanumérico conforme **Nota Técnica conjunta COCAD/SUARA/RFB nº 49 de 14 de maio de 2024**.
+Biblioteca multiplataforma para validação de CNPJ numérico e alfanumérico conforme **Instrução Normativa RFB nº 2229, de 15 de outubro de 2024**.
 
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](LICENSE)
 
@@ -116,17 +116,17 @@ class Program
 - Total: 14 dígitos numéricos
 
 ### CNPJ Alfanumérico (Novo)
-- Formato: `XX.XXX.XXX/XXXX-XX` onde os primeiros 8 caracteres podem ser letras (A-Z) ou números (0-9)
-- Os últimos 6 caracteres devem ser numéricos
-- Exemplo: `A1.B2C.3D4/0001-95`
-- Total: 8 caracteres alfanuméricos + 6 dígitos numéricos
+- Formato: `XX.XXX.XXX/XXXX-XX` onde os primeiros 12 caracteres podem ser letras (A-Z) ou números (0-9)
+- Os últimos 2 caracteres devem ser numéricos
+- Exemplo: `A1.B2C.3D4/ABCD-95`
+- Total: 12 caracteres alfanuméricos + 2 dígitos numéricos
 
 ## 🔍 Como Funciona
 
 A validação do CNPJ segue o algoritmo de validação de dígitos verificadores definido pela Receita Federal:
 
 1. **Limpeza**: Remove todos os caracteres que não sejam números (0-9) ou letras maiúsculas (A-Z)
-2. **Validação de Formato**: Verifica se possui 8 caracteres alfanuméricos seguidos de 6 números
+2. **Validação de Formato**: Verifica se possui 12 caracteres alfanuméricos seguidos de 2 números
 3. **Cálculo dos Dígitos Verificadores**: 
    - Para caracteres alfanuméricos, utiliza o código ASCII:
      - Números 0-9 mantêm seus valores (0-9)
@@ -137,7 +137,7 @@ A validação do CNPJ segue o algoritmo de validação de dígitos verificadores
 
 ## ⚙️ Especificações Técnicas
 
-- **Base Legal**: Nota Técnica conjunta COCAD/SUARA/RFB nº 49 de 14 de maio de 2024
+- **Base Legal**: Instrução Normativa RFB nº 2229, de 15 de outubro de 2024
 - **Algoritmo**: Módulo 11 com pesos de 2 a 9
 - **Conversão ASCII**: Caracteres numéricos e alfabéticos maiúsculos
 - **Dígitos Verificadores**: Últimos 2 dígitos do CNPJ
@@ -189,12 +189,12 @@ Contribuições são bem-vindas! Sinta-se à vontade para:
 
 ## 📚 Referências
 
-- [Nota Técnica COCAD/SUARA/RFB nº 49/2024](https://www.gov.br/receitafederal) - Especificação oficial do CNPJ alfanumérico
+- [Instrução Normativa RFB nº 2229, de 15 de outubro de 2024](https://normasinternet2.receita.fazenda.gov.br/#/consulta/externa/141102) - Especificação oficial do CNPJ alfanumérico
 - [Receita Federal do Brasil](https://www.gov.br/receitafederal)
 
 ## 🔄 Versão
 
-**Versão 1.0** - 11/07/2024
+Versão 1.1 - 18/06/2026
 
 ## ❓ FAQ
 
@@ -217,3 +217,4 @@ Não há problemas conhecidos no momento. Se encontrar algum bug, por favor [abr
 ---
 
 **Nota**: Este projeto foi desenvolvido com base na documentação oficial da Receita Federal do Brasil e segue rigorosamente as especificações técnicas publicadas.
+Data de lançamento: 11/07/2024

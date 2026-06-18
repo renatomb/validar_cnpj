@@ -1,7 +1,7 @@
 """
 Função para validação de CNPJ numérico ou alfanumérico em Python
 Autor: Eng. Renato Monteiro Batista
-Versão: 1.0 - 11/07/2024
+Versão: 1.1 - 18/06/2026
 URL: https://github.com/renatomb/validar_cnpj
 
 @param str cnpj
@@ -30,7 +30,7 @@ def validar_cnpj(cnpj):
     # Remove da string cnpj tudo que não for número 0-9 ou letra maiuscula A-Z
     cnpj = re.sub(r'[^0-9A-Z]', '', cnpj)
     # Valida se existe caracteres alfanuméricos maiúsculos somente na raiz do CNPJ seguidos de 6 números
-    if not re.match(r'^[0-9A-Z]{8}[0-9]{6}$', cnpj):
+    if not re.match(r'^[0-9A-Z]{12}[0-9]{2}$', cnpj):
         return False
     soma = [0, 0]
     multiplicador = 2

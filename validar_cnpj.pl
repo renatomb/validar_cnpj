@@ -2,7 +2,7 @@
 =pod
 Função para validação de CNPJ numérico ou alfanumérico em Perl
 Autor: Eng. Renato Monteiro Batista
-Versão: 1.0 - 11/07/2024
+Versão: 1.1 - 18/06/2026
 URL: https://github.com/renatomb/validar_cnpj
 
 @param string $cnpj
@@ -35,7 +35,7 @@ sub validar_cnpj {
     $cnpj =~ s/[^0-9A-Z]//g;
 
     # Valida se existe caracteres alfanuméricos maiúsculos somente na raiz do CNPJ seguidos de 6 números
-    return 0 unless $cnpj =~ /^[0-9A-Z]{8}[0-9]{6}$/;
+    return 0 unless $cnpj =~ /^[0-9A-Z]{12}[0-9]{2}$/;
 
     my @soma = (0, 0);
     my $multiplicador = 2;

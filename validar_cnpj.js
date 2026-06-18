@@ -1,7 +1,7 @@
 /*
 Função para validação de CNPJ numérico ou alfanumérico em JavaScript
 Autor: Eng. Renato Monteiro Batista
-Versão: 1.0 - 11/07/2024
+Versão: 1.1 - 18/06/2026
 URL: https://github.com/renatomb/validar_cnpj
  
 @param {string} cnpj
@@ -28,7 +28,7 @@ function validar_cnpj(cnpj) {
     // Remove da string cnpj tudo que não for número 0-9 ou letra maiuscula A-Z
     cnpj = cnpj.replace(/[^0-9A-Z]/g, '');
     // Valida se existe caracteres alfanuméricos maiúsculos somente na raiz do CNPJ seguidos de 6 números
-    if (!/^[0-9A-Z]{8}[0-9]{6}$/.test(cnpj)) {
+    if (!/^[0-9A-Z]{12}[0-9]{2}$/.test(cnpj)) {
         return false;
     }
     let soma = [0, 0];
